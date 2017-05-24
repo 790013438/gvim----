@@ -108,6 +108,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'lilydjwg/fcitx.vim'
+Plugin 'kristijanhusak/vim-hybrid-material'
 "Plugin 'SpaceVim/SpaceVim'
 "Plugin 'artur-shaik/vim-javacomplete2'
 " 插件列表结束
@@ -116,7 +117,7 @@ filetype plugin indent on
 " <<<<
 
 " 配色方案
-"set background=dark
+set background=dark
 "colorscheme solarized
 colorscheme molokai
 "colorscheme phd

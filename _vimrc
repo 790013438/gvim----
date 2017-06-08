@@ -84,13 +84,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'kshenoy/vim-signature'
 Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/indexer.tar.gz'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/vimprj'
@@ -290,40 +290,8 @@ let tagbar_width=32
 " tagbar 子窗口中不显示冗余帮助信息
 let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
-let g:tagbar_type_cpp = {
-     \ 'ctagstype' : 'c++',
-     \ 'kinds'     : [
-         \ 'c:classes:0:1',
-         \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0', 
-         \ 'f:functions:0:1',
-         \ 'g:enumeration:0:1',
-         \ 'l:local:0:1',
-         \ 'm:members:0:1',
-         \ 'n:namespaces:0:1',
-         \ 'p:functions_prototypes:0:1',
-         \ 's:structs:0:1',
-         \ 't:typedefs:0:1',
-         \ 'u:unions:0:1',
-         \ 'v:global:0:1',
-         \ 'x:external:0:1'
-     \ ],
-     \ 'sro'        : '::',
-     \ 'kind2scope' : {
-         \ 'g' : 'enum',
-         \ 'n' : 'namespace',
-         \ 'c' : 'class',
-         \ 's' : 'struct',
-         \ 'u' : 'union'
-     \ },
-     \ 'scope2kind' : {
-         \ 'enum'      : 'g',
-         \ 'namespace' : 'n',
-         \ 'class'     : 'c',
-         \ 'struct'    : 's',
-         \ 'union'     : 'u'
-     \ }
-\ }
+
+
 
 " <<
 
@@ -495,7 +463,8 @@ map <C-S-Tab> :MBEbp<cr>
 set sessionoptions="blank,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
 
 " 保存 undo 历史。必须先行创建 .undo_history/
-set undodir=~/.undo_history/
+" set undodir=~/.undo_history/
+set undodir=D:\programming\gvim_8.0.0003_x64\vim/.undo_history/
 set undofile
 
 " 保存快捷键
@@ -530,72 +499,12 @@ nnoremap <Leader>ud :GundoToggle<CR>
 "Lang $ Encoding{{{
 set fileencodings=utf8,gbk2312,gbk,gb18030,cp936
 set encoding=utf8
-set langmenu=zh_CN
+set langmenu=zh_CN.UTF-8
 let $LANG = 'en_us.UTF-8'
-"language messages zh_CN.UTF-8
+language message zh_CN.UTF-8
 "}}}
 
-"2 20170517 vim-javacomplete2
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete
-"To enable smart (trying to guess import option) inserting class imports with F4, add:
-"let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
-"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 
-"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-
-"To enable usual (will ask for import option) inserting class imports with F5, add:
-
-"nmap <F5> <Plug>(JavaComplete-Imports-Add)
-
-"imap <F5> <Plug>(JavaComplete-Imports-Add)
-
-"To add all missing imports with F6:
-
-"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-"To remove all unused imports with F7:
-
-"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-"Default mappings:
-
-"  nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
-"  nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
-"  nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
-"  nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
-
-"  imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
-"  imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
-"  imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
-"  imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
-
-"  nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
-
-"  imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
-
-"  nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
-"  nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-"  nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-"  nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-"  nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
-"  nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
-"  nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
-"  nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
-
-"  imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
-"  imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
-"  imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-
-"  vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-"  vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-"  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-
-"  nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
-"  nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)自动保存
-"233
 "2
 "Youcompleteme fix
 let g:ycm_global_ycm_extra_conf = 'D:\programming\gvim_8.0.0003_x64\vim\vimfiles\bundle\YouCompleteMe\third_party\ycmd\cpp\ycm/.ycm_extra_conf.py'
